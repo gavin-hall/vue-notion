@@ -1,0 +1,215 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  @font-face {
+    font-family: "soehne-buch";
+    src:
+      url("~assets/fonts/soehne-web-buch.woff2") format("woff2"), /* Modern Browsers */
+      url("~assets/fonts/soehne-web-buch.woff") format("woff"), /* + IE 9 to Edge  */
+      url("~assets/fonts/soehne-web-buch.eot") format("eot"); /* + IE 6 */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "soehne-kraftig";
+    src:
+    url("~assets/fonts/soehne-web-kraftig.woff2") format("woff2"), /* Modern Browsers */
+    url("~assets/fonts/soehne-web-kraftig.woff") format("woff"), /* + IE 9 to Edge  */
+    url("~assets/fonts/soehne-web-kraftig.eot") format("eot"); /* + IE 6 */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "soehne-halbfett";
+    src:
+    url("~assets/fonts/soehne-web-halbfett.woff2") format("woff2"), /* Modern Browsers */
+    url("~assets/fonts/soehne-web-halbfett.woff") format("woff"), /* + IE 9 to Edge  */
+    url("~assets/fonts/soehne-web-halbfett.eot") format("eot"); /* + IE 6 */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CooperMd';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('~assets/fonts/CooperMd.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Astro-40';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('~assets/fonts/Astro-40.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Astro-60';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('~assets/fonts/Astro-60.woff2') format('woff2');
+  }  
+  ::selection {
+    @apply bg-yellow-400 text-white;
+  }
+  html {
+    @apply bg-bone-500;
+  }
+  body {
+    @apply font-sans text-base antialiased text-charcoal-700 bg-bone-500;
+    font-display: swap;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+  a > span,
+  a {
+    @apply text-iris-800;
+    background-color: transparent;
+    transition: 0.3s all;
+    outline: none;
+    cursor: pointer;
+  }
+  a:active {
+    outline: none;
+  }
+  a:hover {
+    @apply text-iris-600;
+  }
+  a:focus {
+    @apply outline-none;
+  }
+  main h1, main h2, main h3, main h4, main h5, main h6, main p, main ul, main ol {
+    @apply max-w-4xl;
+  }
+  main strong {
+		@apply font-sans-bold font-normal;
+		font-weight: normal;
+	}
+	main p {
+		@apply my-4;
+	}
+  blockquote {
+    margin: 0;
+  }
+  blockquote p {
+    margin: 0 0 1rem;
+    @apply font-sans;
+    font-size: 1.2rem;
+  }
+  blockquote cite {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-style: normal;
+  }
+  label {
+    @apply block mb-4 uppercase tracking-widest text-sm text-charcoal-400  font-alt-60;
+  }
+  input,
+  textarea {
+    @apply antialiased block  rounded-md w-full border-2 border-bone-550 py-3 px-5 text-lg bg-white text-charcoal-700 font-sans-medium transition duration-300 ease-in-out;
+    opacity: 0.9;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-charcoal-400;
+  }
+  input:hover,
+  textarea:hover {
+    @apply bg-blue-50 border-blue-300;
+  }
+  input:focus,
+  textarea:focus {
+    @apply outline-none bg-blue-50 shadow-inner border-blue-500;
+      opacity: 1;
+  }
+  input:active,
+  textarea:active {
+    @apply outline-none bg-blue-100 shadow-inner border-blue-300;
+      opacity: 1;
+  }
+  button {
+    transition: 0.3s all ease-out;
+  }
+  .validation-message p {
+    @apply mt-2 text-ember-600 text-md font-sans;
+  }
+  .underscore {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  .underscore:hover, .underscore:focus {
+    background-size: 100% 2px;
+  }
+  .underscore.slim {
+    background-size: 0% 1px;
+    background-image: linear-gradient(#8F9EE1, #8F9EE1);
+  }
+  .underscore.slim:hover, .underscore.slim:focus {
+    background-size: 100% 1px;
+  }
+  .page-title {
+    @apply absolute z-30 uppercase tracking-widest font-alt-60 text-charcoal-300 text-sm;
+    top: 2.4rem;
+    left: 6rem;
+  }
+  .bg-circle-line {
+    background: transparent url(~assets/images/bg-circle-line.svg) 50% 50% no-repeat;
+    background-size: contain;
+  }
+  .bg-circle-lines {
+    background: transparent url(~assets/images/bg-circle-lines.svg) 50% 50% no-repeat;
+    background-size: contain;
+  }
+  .page-enter-active, .page-leave-active {
+    transition: opacity .15s;
+  }
+  .page-leave-active {
+    -webkit-animation: fade-out-br 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-out-br 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  .page-enter-active {
+    -webkit-animation: fade-in-tl 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-tl 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  .page-enter, .page-leave-to {
+    opacity: 0;
+  }
+  .layout-enter-active, .layout-leave-active {
+    transition: opacity .15s;
+  }
+  .layout-enter, .layout-leave-to {
+    opacity: 0;
+  }
+  @screen sm {}
+  @screen md {
+    input,
+    textarea {
+      @apply text-2xl;
+    }
+    .vertical-text {
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+    }
+  }
+  @screen lg {
+    label {
+      @apply text-base;
+    }
+    input,
+    textarea {
+      @apply text-xl;
+    }
+  }
+  @screen xl {}
+  @screen 2xl {}
+}
